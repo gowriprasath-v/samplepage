@@ -13,14 +13,14 @@ function Products() {
     useEffect(() =>{
         const timer = setInterval(() =>
             {
-                setIndex((index + 1) % images.length);
+                setIndex((index) =>(index + 1) % images.length);
             },4000);
             return () => clearInterval(timer);
     },[]);
 
     return <>
         <div>
-        <img src={images[index]} alt={`Slide ${index + 1}`} width="400" height="200" style={{alignContent:"center",borderRadius:"7px" }}/>
+        <img src={images[index]} alt={`Slide ${index + 1}`} height="300" style={{display:"block", margin:"auto",borderRadius:"10px",objectFit:"contain",marginTop:"20px"}}/>
         </div>
     </>
 }
